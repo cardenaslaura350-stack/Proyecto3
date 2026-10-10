@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #000;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #0066cc !important;
+}
+
+/* --- Variables globales y Reset --- */
+:root {
+    --primary-color: #0066cc;
+    --primary-hover: #004b99;
+    --text-color: #1f2937;
+    --text-light: #6b7280;
+    --bg-color: #f9fafb;
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+    --max-width: 1100px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 0 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* --- Encabezado y Navegación --- */
+header {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h2 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+/* --- Estructura Principal --- */
+main {
+    max-width: var(--max-width);
+    margin: 2rem auto;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.hero p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Sección de 3 Columnas (Grid) */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.card h4 {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+}
+
+.card .item {
+    margin-bottom: 1rem;
+}
+
+.card ul {
+    list-style-position: inside;
+    margin-top: 0.5rem;
+}
+
+/* Reseñas */
+.reviews {
+    margin-bottom: 3rem;
+}
+
+.reviews h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.review-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-card p {
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.review-card .author {
+    display: block;
+    margin-top: auto;
+}
+
+/* --- Pie de Página --- */
+footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Separadores */
+.divider {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 1rem 0;
+}
+
+
+
+
+@media (max-width: 600px) {
+
+    /* 1. Contenedor padre: cambia de fila a columna */
+    .contenedor-principal,
+    main,
+    .wrapper,
+    .layout {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    /* 2. Columna principal (toma todo el ancho y se mantiene arriba) */
+    .contenido-principal,
+    main section,
+    .columna-principal {
+        width: 100% !important;
+        order: 1;
+        /* Garantiza que aparezca primero */
+    }
+
+    /* 3. Columna lateral (pasa a ocupar el 100% y se ubica abajo) */
+    aside,
+    .sidebar,
+    .columna-lateral {
+        width: 100% !important;
+        float: none !important;
+        /* Elimina flotados antiguos si usabas float */
+        order: 2;
+        /* Se posiciona justo debajo del contenido principal */
+        margin-top: 20px;
+        border-color: #2222e6;
+    }
+}
+
+/* xxl Extra Extra Large */
+@media (max-width: 1400px) {}
+
+/* xl Extra Large */
+@media (max-width: 1200px) {}
+
+/* lg Large */
+@media (max-width: 992px) {}
+
+/* md Medium */
+@media (max-width: 768px) {}
+
+/* sm Small */
+@media (max-width: 576px) {}
+
+/* Extra small */
+@media (max-width: 575.98px) {}
+
+
+
+
+@media (max-width: 600px) {
+
+    /* 1. Contenedor padre: cambia de fila a columna */
+    .contenedor-principal,
+    main,
+    .wrapper,
+    .layout {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    /* 2. Columna principal (toma todo el ancho y se mantiene arriba) */
+    .contenido-principal,
+    main section,
+    .columna-principal {
+        width: 100% !important;
+        order: 1;
+        /* Garantiza que aparezca primero */
+    }
+
+    /* 3. Columna lateral (pasa a ocupar el 100% y se ubica abajo) */
+    aside,
+    .sidebar,
+    .columna-lateral {
+        width: 100% !important;
+        float: none !important;
+        /* Elimina flotados antiguos si usabas float */
+        order: 2;
+        /* Se posiciona justo debajo del contenido principal */
+        margin-top: 20px;
+        border-color: #2222e6;
+    }
+}
+
+/* xxl Extra Extra Large */
+@media (max-width: 1400px) {}
+
+/* xl Extra Large */
+@media (max-width: 1200px) {}
+
+/* lg Large */
+@media (max-width: 992px) {}
+
+/* md Medium */
+@media (max-width: 768px) {}
+
+/* sm Small */
+@media (max-width: 576px) {}
+
+/* Extra small */
+@media (max-width: 575.98px) {}

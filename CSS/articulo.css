@@ -1,0 +1,116 @@
+
+:root {
+    --primary-color: #0066cc;
+    --primary-hover: #004b99;
+    --text-color: #1f2937;
+    --text-light: #6b7280;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+    --max-width: 900px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 0 1rem;
+}
+
+/* Encabezado */
+header {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
+
+header table {
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.05rem;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color) !important;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background-color: var(--border-color);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Artículos */
+main {
+    max-width: var(--max-width);
+    margin: 2.5rem auto;
+}
+
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+article {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+article:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+article h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+article p {
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+}
+
+article a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+article a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
